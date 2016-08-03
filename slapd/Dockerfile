@@ -17,6 +17,8 @@ ADD slapd.conf /etc/openldap/slapd.conf
 # Add schema
 ADD goons.schema /etc/openldap/schema/goons.schema
 
+RUN chown -R ldap:ldap /etc/openldap
+
 # Verify configuration
 RUN slaptest -u
 
